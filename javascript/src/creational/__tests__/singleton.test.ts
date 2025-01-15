@@ -1,13 +1,14 @@
 import { test, expect, vi, describe } from 'vitest';
-import { Singleton } from '../singleton';
 
 describe('Singleton pattern tests', () => {
-  test('should return an instance of the singleton', () => {
+  test('should return an instance of the singleton', async () => {
+    const { Singleton } = await import('../singleton');
     const inst = Singleton.getInstance();
     expect(inst).toBeInstanceOf(Singleton);
   });
 
-  test('should return the same instance', () => {
+  test('should return the same instance', async () => {
+    const { Singleton } = await import('../singleton');
     const ref1 = Singleton.getInstance();
     const ref2 = Singleton.getInstance();
     expect(ref1).toBe(ref2);
@@ -20,7 +21,9 @@ describe('Singleton pattern tests', () => {
    * 2. A mocked implementation of `greet` can return a custom value.
    * 3. Singleton instances share the same behavior for mocked methods.
    */
-  test('should call the greet method on the instance', () => {
+  test('should call the greet method on the instance', async () => {
+    const { Singleton } = await import('../singleton');
+
     // Retrieve two references to the Singleton instance
     const ref1 = Singleton.getInstance();
     const ref2 = Singleton.getInstance();
