@@ -1,34 +1,36 @@
-import { Factories, Shape, ShapeFactory } from './abstract_factory.types';
+import { AbstractFactoryTypes } from './types';
 
 // Concrete Products
-export class Circle implements Shape {
+export class Circle implements AbstractFactoryTypes.Shape {
   draw(): string {
     return 'Drawing a Circle';
   }
 }
 
-export class Rectangle implements Shape {
+export class Rectangle implements AbstractFactoryTypes.Shape {
   draw(): string {
     return 'Drawing a Rectangle';
   }
 }
 
 // Concrete Factories
-export class CircleFactory implements ShapeFactory {
-  createShape(): Shape {
+export class CircleFactory implements AbstractFactoryTypes.ShapeFactory {
+  createShape(): AbstractFactoryTypes.Shape {
     return new Circle();
   }
 }
 
-export class RectangleFactory implements ShapeFactory {
-  createShape(): Shape {
+export class RectangleFactory implements AbstractFactoryTypes.ShapeFactory {
+  createShape(): AbstractFactoryTypes.Shape {
     return new Rectangle();
   }
 }
 
 // Factory Producer to get factories dynamically
 export class FactoryProducer {
-  static getFactory(type: Factories): ShapeFactory {
+  static getFactory(
+    type: AbstractFactoryTypes.Factories
+  ): AbstractFactoryTypes.ShapeFactory {
     switch (type) {
       case 'Circle':
         return new CircleFactory();

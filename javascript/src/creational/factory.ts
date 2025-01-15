@@ -1,4 +1,4 @@
-import { vehicleType } from './factory.types';
+import { FactoryTypes } from './types';
 // Abstract Creator
 abstract class Vehicle {
   abstract drive(): void;
@@ -19,10 +19,10 @@ export class Bike extends Vehicle {
 
 // Creator class
 export class VehicleFactory {
-  static createVehicle(type: vehicleType): Vehicle {
-    if (type === vehicleType.car) {
+  static createVehicle(type: FactoryTypes.vehicleType): Vehicle {
+    if (type === FactoryTypes.vehicleType.car) {
       return new Car();
-    } else if (type === vehicleType.bike) {
+    } else if (type === FactoryTypes.vehicleType.bike) {
       return new Bike();
     } else {
       throw new Error('Unknown vehicle type');

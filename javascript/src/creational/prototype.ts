@@ -1,14 +1,14 @@
-import { Prototype, DocumentType } from './prototype.types';
+import { PrototypeTypes } from './types';
 
 /**
  * Concrete Prototype: Implements the Prototype interface.
  */
-export class Document implements Prototype<Document> {
+export class Document implements PrototypeTypes.Prototype<Document> {
   public title: string;
   public content: string;
   public metadata: Record<string, any>;
 
-  constructor({ title, content, metadata = {} }: DocumentType) {
+  constructor({ title, content, metadata = {} }: PrototypeTypes.DocumentType) {
     this.title = title;
     this.content = content;
     this.metadata = metadata;

@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { DocumentType } from '../prototype.types';
+import { PrototypeTypes } from '../types';
 
 describe('Prototype Pattern', () => {
   describe('Document class', () => {
-    const initialData: DocumentType = {
+    const initialData: PrototypeTypes.DocumentType = {
       title: 'Sample Document',
       content: 'This is a test document.',
       metadata: { author: 'John Doe', pages: 10 },

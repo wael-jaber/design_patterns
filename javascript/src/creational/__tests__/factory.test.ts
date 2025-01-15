@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'vitest';
 
-import { vehicleType } from '../factory.types';
+import { FactoryTypes } from '../types';
 
 describe('Factory pattern tests', () => {
   test('should be able to drive car', async () => {
@@ -18,14 +18,14 @@ describe('Factory pattern tests', () => {
   test('should create car', async () => {
     const { VehicleFactory, Car } = await import('../factory');
 
-    const car = VehicleFactory.createVehicle(vehicleType.car);
+    const car = VehicleFactory.createVehicle(FactoryTypes.vehicleType.car);
     expect(car).toBeInstanceOf(Car);
   });
 
   test('should create bike', async () => {
     const { Bike, VehicleFactory } = await import('../factory');
 
-    const bike = VehicleFactory.createVehicle(vehicleType.bike);
+    const bike = VehicleFactory.createVehicle(FactoryTypes.vehicleType.bike);
     expect(bike).toBeInstanceOf(Bike);
   });
 });

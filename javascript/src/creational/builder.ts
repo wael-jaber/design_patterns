@@ -1,9 +1,9 @@
-import { Computer, ComputerBuilder } from './builder.types';
+import { BuilderTypes } from './types/builder.types';
 
 /**
  * Concrete implementation of a computer product.
  */
-export class ComputerImpl implements Computer {
+export class ComputerImpl implements BuilderTypes.Computer {
   public CPU?: string;
   public RAM?: string;
   public storage?: string;
@@ -17,7 +17,7 @@ export class ComputerImpl implements Computer {
 /**
  * Concrete Builder: Implements the steps defined in the Builder interface.
  */
-export class GamingComputerBuilder implements ComputerBuilder {
+export class GamingComputerBuilder implements BuilderTypes.ComputerBuilder {
   private computer: ComputerImpl;
 
   constructor() {
@@ -44,7 +44,7 @@ export class GamingComputerBuilder implements ComputerBuilder {
     return this;
   }
 
-  build(): Computer {
+  build(): BuilderTypes.Computer {
     const result = this.computer;
     this.computer = new ComputerImpl(); // Reset for the next build
     return result;
@@ -55,7 +55,9 @@ export class GamingComputerBuilder implements ComputerBuilder {
  * Director: Orchestrates the building process using the builder interface.
  */
 export class ComputerDirector {
-  static buildBasicComputer(builder: ComputerBuilder): Computer {
+  static buildBasicComputer(
+    builder: BuilderTypes.ComputerBuilder
+  ): BuilderTypes.Computer {
     return builder
       .setCPU('Intel i5')
       .setRAM('8GB')
@@ -63,7 +65,9 @@ export class ComputerDirector {
       .build();
   }
 
-  static buildGamingComputer(builder: ComputerBuilder): Computer {
+  static buildGamingComputer(
+    builder: BuilderTypes.ComputerBuilder
+  ): BuilderTypes.Computer {
     return builder
       .setCPU('AMD Ryzen 9')
       .setRAM('32GB')
