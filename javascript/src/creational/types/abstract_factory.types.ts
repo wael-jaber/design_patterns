@@ -7,5 +7,8 @@ export namespace AbstractFactoryTypes {
     createShape(): Shape;
   }
 
-  export type Factories = 'Circle' | 'Rectangle';
+  export enum Factories {
+    circle = 'Circle',
+    rectangle = 'Rectangle',
+  }
 }

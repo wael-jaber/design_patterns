@@ -32,10 +32,10 @@ export class FactoryProducer {
     type: AbstractFactoryTypes.Factories
   ): AbstractFactoryTypes.ShapeFactory {
     switch (type) {
-      case 'Circle':
+      case AbstractFactoryTypes.Factories.circle:
         return new CircleFactory();
 
-      case 'Rectangle':
+      case AbstractFactoryTypes.Factories.rectangle:
         return new RectangleFactory();
 
       default:

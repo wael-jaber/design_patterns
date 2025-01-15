@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest';
+import { AbstractFactoryTypes } from '../types';
 
 describe('Abstract Factory pattern tests', () => {
   test('should have draw method on Circle instance', async () => {
@@ -42,7 +43,9 @@ describe('Abstract Factory pattern tests', () => {
       '../abstract_factory'
     );
 
-    const circleFactory = FactoryProducer.getFactory('Circle');
+    const circleFactory = FactoryProducer.getFactory(
+      AbstractFactoryTypes.Factories.circle
+    );
     expect(circleFactory).toBeInstanceOf(CircleFactory);
   });
   test('should return RectangleFactory', async () => {
@@ -50,7 +53,9 @@ describe('Abstract Factory pattern tests', () => {
       '../abstract_factory'
     );
 
-    const rectangleFactory = FactoryProducer.getFactory('Rectangle');
+    const rectangleFactory = FactoryProducer.getFactory(
+      AbstractFactoryTypes.Factories.rectangle
+    );
     expect(rectangleFactory).toBeInstanceOf(RectangleFactory);
   });
 
