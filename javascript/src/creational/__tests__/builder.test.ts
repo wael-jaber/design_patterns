@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { ComputerDirector, GamingComputerBuilder } from '../builder';
 
-describe('Builder Pattern', () => {
+describe('Builder pattern tests', () => {
   describe('GamingComputerBuilder', () => {
-    it('should have the setters and build methods', () => {
+    it('should have the setters and build methods', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       expect(builder).toHaveProperty('setCPU');
       expect(builder).toHaveProperty('setGPU');
@@ -11,35 +11,40 @@ describe('Builder Pattern', () => {
       expect(builder).toHaveProperty('setStorage');
       expect(builder).toHaveProperty('build');
     });
-    it('should set the CPU correctly', () => {
+    it('should set the CPU correctly', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       builder.setCPU('Intel i7');
       const computer = builder.build();
       expect(computer.CPU).toBe('Intel i7');
     });
 
-    it('should set the RAM correctly', () => {
+    it('should set the RAM correctly', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       builder.setRAM('16GB');
       const computer = builder.build();
       expect(computer.RAM).toBe('16GB');
     });
 
-    it('should set the storage correctly', () => {
+    it('should set the storage correctly', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       builder.setStorage('1TB SSD');
       const computer = builder.build();
       expect(computer.storage).toBe('1TB SSD');
     });
 
-    it('should set the GPU correctly', () => {
+    it('should set the GPU correctly', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       builder.setGPU('NVIDIA RTX 3080');
       const computer = builder.build();
       expect(computer.GPU).toBe('NVIDIA RTX 3080');
     });
 
-    it('should chain methods to configure the computer', () => {
+    it('should chain methods to configure the computer', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       const computer = builder
         .setCPU('Intel i9')
@@ -54,7 +59,8 @@ describe('Builder Pattern', () => {
       expect(computer.GPU).toBe('NVIDIA RTX 4090');
     });
 
-    it('should reset the builder state after building a computer', () => {
+    it('should reset the builder state after building a computer', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       builder.setCPU('Intel i5');
       const computer1 = builder.build();
@@ -68,7 +74,10 @@ describe('Builder Pattern', () => {
   });
 
   describe('ComputerDirector', () => {
-    it('should build a basic computer using the director', () => {
+    it('should build a basic computer using the director', async () => {
+      const { GamingComputerBuilder, ComputerDirector } = await import(
+        '../builder'
+      );
       const builder = new GamingComputerBuilder();
       const computer = ComputerDirector.buildBasicComputer(builder);
 
@@ -78,7 +87,10 @@ describe('Builder Pattern', () => {
       expect(computer.GPU).toBeUndefined();
     });
 
-    it('should build a gaming computer using the director', () => {
+    it('should build a gaming computer using the director', async () => {
+      const { GamingComputerBuilder, ComputerDirector } = await import(
+        '../builder'
+      );
       const builder = new GamingComputerBuilder();
       const computer = ComputerDirector.buildGamingComputer(builder);
 
@@ -90,7 +102,8 @@ describe('Builder Pattern', () => {
   });
 
   describe('Computer', () => {
-    it('should describe the computer configuration', () => {
+    it('should describe the computer configuration', async () => {
+      const { GamingComputerBuilder } = await import('../builder');
       const builder = new GamingComputerBuilder();
       const computer = builder
         .setCPU('Intel i7')
