@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { PrototypeTypes } from '../types';
 
-describe('Prototype Pattern', () => {
+describe('Prototype pattern tests', () => {
   describe('Document class', () => {
     const initialData: PrototypeTypes.DocumentType = {
       title: 'Sample Document',

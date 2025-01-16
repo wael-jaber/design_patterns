@@ -1,6 +1,6 @@
 # Define subdirectories for each language
-SUBDIRS = javascript java python rust go
-SUBDIRS_INIT = javascript_init java_init python_init rust_init go_init
+SUBDIRS = typescript java python rust go
+SUBDIRS_INIT = typescript_init java_init python_init rust_init go_init
 
 # Default target
 all: setup
@@ -11,20 +11,20 @@ setup: $(SUBDIRS)
 # Initialize all directories
 init: $(SUBDIRS_init)
 
-# TypeScript init (inside javascript folder)
-javascript_init:
-	@echo "Initializing TypeScript environment in the 'javascript' folder..."
-	@mkdir -p javascript
-	@cd javascript && pnpm init -y
-	@cd javascript && pnpm add -D typescript @types/node
-	@cd javascript && pnpm exec tsc --init
-	@echo "TypeScript Initialization complete in the 'javascript' folder."
+# TypeScript init (inside typescript folder)
+typescript_init:
+	@echo "Initializing TypeScript environment in the 'typescript' folder..."
+	@mkdir -p typescript
+	@cd typescript && pnpm init -y
+	@cd typescript && pnpm add -D typescript @types/node
+	@cd typescript && pnpm exec tsc --init
+	@echo "TypeScript Initialization complete in the 'typescript' folder."
 
 # Typescript setup ( installing dependencies )
-javascript:
-	@echo "Installing Javascript dependencies"
-	@cd javascript && pnpm install
-	@echo "Installing javascript dependencies completed."
+typescript:
+	@echo "Installing typescript dependencies"
+	@cd typescript && pnpm install
+	@echo "Installing typescript dependencies completed."
 
 # Java init
 java_init:
@@ -79,7 +79,7 @@ help:
 	@echo "Makefile for setting up design patterns sub-repositories:"
 	@echo "  make            - Set up all environments (dependencies installation)"
 	@echo "  make setup      - Alias for 'make'"
-	@echo "  make javascript - init TypeScript environment in 'javascript' folder"
+	@echo "  make typescript - init TypeScript environment in 'typescript' folder"
 	@echo "  make java       - init Java environment"
 	@echo "  make python     - init Python environment"
 	@echo "  make rust       - init Rust environment"
