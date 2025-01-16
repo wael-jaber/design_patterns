@@ -6,7 +6,7 @@ Welcome to the **Design Patterns Examples** repository! This repository serves a
 
 ```
 design-patterns/
-├── javascript/        # Design patterns implemented in JavaScript
+├── typescript/        # Design patterns implemented in Typescript
 ├── java/              # Design patterns implemented in Java
 ├── python/            # Design patterns implemented in Python
 ├── rust/              # Design patterns implemented in Rust
@@ -26,11 +26,11 @@ The project will be implemented step by step, with additional features like cont
 
 ### Language Implementations
 
-- [ ] **JavaScript**
+- [ ] **Typescript**
   - Implement creational, structural, and behavioral patterns.
   - Include comments and clear explanations.
 - [ ] **Java**
-  - Translate JavaScript implementations into Java.
+  - Translate TypeScript implementations into Java.
   - Highlight Java's object-oriented features.
 - [ ] **Python**
   - Implement patterns in Python.
@@ -85,7 +85,7 @@ The project will be implemented step by step, with additional features like cont
 
 Ensure you have the necessary tools installed for the language you wish to explore:
 
-- **JavaScript**: [Node.js](https://nodejs.org/)
+- **TypeScript**: [Node.js](https://nodejs.org/)
 - **Java**: JDK 8+ and a Java build tool like Maven or Gradle
 - **Python**: Python 3.8+
 - **Rust**: Rustup or Cargo
@@ -96,10 +96,10 @@ Ensure you have the necessary tools installed for the language you wish to explo
 
 Navigate to the folder for the desired language and execute the examples. For instance:
 
-#### JavaScript:
+#### TypeScript:
 
 ```bash
-cd javascript
+cd typescript
 node creational/singleton.js
 ```
 
