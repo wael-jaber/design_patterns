@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 
-describe('Proxy Pattern', () => {
+describe('Proxy pattern tests', () => {
   describe('RealService', () => {
     it('should handle the request and return the expected response', async () => {
       const { RealService } = await import('../proxy');

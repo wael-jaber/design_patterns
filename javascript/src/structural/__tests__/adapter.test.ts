@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 
-describe('Adapter Pattern', () => {
+describe('Adapter pattern tests', () => {
   describe('OldPaymentGateway', () => {
     it('should process payment using the old interface', async () => {
       const { OldPaymentGateway } = await import('../adapter');

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-describe('Composite Pattern', () => {
+describe('Composite pattern tests', () => {
   describe('SystemFile', () => {
     it('should return the correct name and size for a file', async () => {
       const { SystemFile } = await import('../composite');
