@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-describe('Decorator Pattern', () => {
+describe('Decorator pattern tests', () => {
   describe('SimpleCoffee', () => {
     it('should return the correct description and cost', async () => {
       const { SimpleCoffee } = await import('../decorator');

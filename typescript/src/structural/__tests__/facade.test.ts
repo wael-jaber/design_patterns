@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 
-describe('Facade Pattern', () => {
+describe('Facade pattern tests', () => {
   describe('PaymentSystem', () => {
     it('should process a payment and return a success message', async () => {
       const { PaymentSystem } = await import('../facade');
