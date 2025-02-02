@@ -26,7 +26,7 @@ The project will be implemented step by step, with additional features like cont
 
 ### Language Implementations
 
-- [ ] **Typescript**
+- [x] **Typescript**
   - Implement creational, structural, and behavioral patterns.
   - Include comments and clear explanations.
 - [ ] **Java**
