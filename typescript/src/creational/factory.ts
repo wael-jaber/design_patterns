@@ -1,17 +1,13 @@
 import { FactoryTypes } from './types';
-// Abstract Creator
-abstract class Vehicle {
-  abstract drive(): void;
-}
 
 // Concrete Creators
-export class Car extends Vehicle {
+export class Car extends FactoryTypes.Vehicle {
   drive(): void {
     console.log('Driving a car!');
   }
 }
 
-export class Bike extends Vehicle {
+export class Bike extends FactoryTypes.Vehicle {
   drive(): void {
     console.log('Riding a bike!');
   }
@@ -19,7 +15,7 @@ export class Bike extends Vehicle {
 
 // Creator class
 export class VehicleFactory {
-  static createVehicle(type: FactoryTypes.vehicleType): Vehicle {
+  static createVehicle(type: FactoryTypes.vehicleType): FactoryTypes.Vehicle {
     if (type === FactoryTypes.vehicleType.car) {
       return new Car();
     } else if (type === FactoryTypes.vehicleType.bike) {
