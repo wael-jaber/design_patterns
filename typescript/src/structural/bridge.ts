@@ -30,17 +30,8 @@ export class Radio implements BridgeTypes.Device {
   }
 }
 
-// Abstraction: Defines the interface for high-level control
-export abstract class RemoteControl {
-  constructor(protected device: BridgeTypes.Device) {}
-
-  abstract togglePower(): string; // Toggles power on/off
-  abstract volumeUp(): string; // Increases the volume
-  abstract volumeDown(): string; // Decreases the volume
-}
-
 // Refined Abstraction: Extends the high-level control
-export class BasicRemoteControl extends RemoteControl {
+export class BasicRemoteControl extends BridgeTypes.RemoteControl {
   private isOn = false;
   private volume = 10;
 

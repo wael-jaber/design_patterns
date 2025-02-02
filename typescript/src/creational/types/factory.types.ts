@@ -3,4 +3,7 @@ export namespace FactoryTypes {
     bike = 'bike',
     car = 'car',
   }
+  export abstract class Vehicle {
+    abstract drive(): void;
+  }
 }

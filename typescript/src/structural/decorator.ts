@@ -11,21 +11,8 @@ export class SimpleCoffee implements DecoratorTypes.Coffee {
   }
 }
 
-// Base Decorator: Implements the Coffee interface and wraps a Coffee object
-export abstract class CoffeeDecorator implements DecoratorTypes.Coffee {
-  constructor(protected coffee: DecoratorTypes.Coffee) {}
-
-  getDescription(): string {
-    return this.coffee.getDescription(); // Delegates to the wrapped coffee
-  }
-
-  getCost(): number {
-    return this.coffee.getCost(); // Delegates to the wrapped coffee
-  }
-}
-
 // Concrete Decorators: Add new behaviors or properties
-export class MilkDecorator extends CoffeeDecorator {
+export class MilkDecorator extends DecoratorTypes.CoffeeDecorator {
   getDescription(): string {
     return `${this.coffee.getDescription()}, Milk`;
   }
@@ -35,7 +22,7 @@ export class MilkDecorator extends CoffeeDecorator {
   }
 }
 
-export class SugarDecorator extends CoffeeDecorator {
+export class SugarDecorator extends DecoratorTypes.CoffeeDecorator {
   getDescription(): string {
     return `${this.coffee.getDescription()}, Sugar`;
   }
@@ -45,7 +32,7 @@ export class SugarDecorator extends CoffeeDecorator {
   }
 }
 
-export class VanillaDecorator extends CoffeeDecorator {
+export class VanillaDecorator extends DecoratorTypes.CoffeeDecorator {
   getDescription(): string {
     return `${this.coffee.getDescription()}, Vanilla`;
   }
