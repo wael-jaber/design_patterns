@@ -29,8 +29,7 @@ typescript:
 # Java init
 java_init:
 	@echo "Initializing Java environment..."
-	@mkdir -p java
-	@cd java && mkdir -p src/main/java src/test/java && touch pom.xml
+	@mvn archetype:generate -DgroupId=com.example -DartifactId=java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 	@echo "Java Initialization complete. Please configure pom.xml for Maven."
 
 java:
@@ -69,7 +68,7 @@ go_init:
 	@cd go && go mod init design-patterns
 	@echo "Go Initialization complete."
 
-rust:
+go:
 	@echo "Installing Go dependencies."
 	@echo "Installing Go dependencies."
 
