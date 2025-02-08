@@ -27,7 +27,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Optional: Add Mockito for unit testing with mocks -->
+        <!-- Mockito for unit testing with mocks -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
