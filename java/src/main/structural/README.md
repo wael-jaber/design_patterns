@@ -25,8 +25,8 @@ The **Adapter Pattern** allows objects with incompatible interfaces to work toge
 
 ### Test Files
 
-- [AdapteeTest.java](../../../test/structural/adapter/AdapteeTest.java)
-- [AdapterTest.java](../../../test/structural/adapter/AdapterTest.java)
+- [AdapteeTest.java](../../test/structural/adapter/AdapteeTest.java)
+- [AdapterTest.java](../../test/structural/adapter/AdapterTest.java)
 
 ---
 
@@ -44,8 +44,8 @@ The **Bridge Pattern** decouples an abstraction from its implementation so that 
 
 ### Test Files
 
-- [ImplementorTest.java](../../../test/structural/bridge/ImplementorTest.java)
-- [RefinedAbstractionTest.java](../../../test/structural/bridge/RefinedAbstractionTest.java)
+- [ImplementorTest.java](../../test/structural/bridge/ImplementorTest.java)
+- [RefinedAbstractionTest.java](../../test/structural/bridge/RefinedAbstractionTest.java)
 
 ---
 
@@ -61,8 +61,8 @@ The **Composite Pattern** lets clients treat individual objects and compositions
 
 ### Test Files
 
-- [LeafTest.java](../../../test/structural/composite/LeafTest.java)
-- [CompositeTest.java](../../../test/structural/composite/CompositeTest.java)
+- [LeafTest.java](../../test/structural/composite/LeafTest.java)
+- [CompositeTest.java](../../test/structural/composite/CompositeTest.java)
 
 ---
 
@@ -80,10 +80,10 @@ The **Decorator Pattern** allows behavior to be dynamically added to an object w
 
 ### Test Files
 
-- [ConcreteComponentTest.java](../../../test/structural/decorator/ConcreteComponentTest.java)
-- [ConcreteDecoratorATest.java](../../../test/structural/decorator/ConcreteDecoratorATest.java)
-- [ConcreteDecoratorBTest.java](../../../test/structural/decorator/ConcreteDecoratorBTest.java)
-- [CombinedDecoratorTest.java](../../../test/structural/decorator/CombinedDecoratorTest.java)
+- [ConcreteComponentTest.java](../../test/structural/decorator/ConcreteComponentTest.java)
+- [ConcreteDecoratorATest.java](../../test/structural/decorator/ConcreteDecoratorATest.java)
+- [ConcreteDecoratorBTest.java](../../test/structural/decorator/ConcreteDecoratorBTest.java)
+- [CombinedDecoratorTest.java](../../test/structural/decorator/CombinedDecoratorTest.java)
 
 ---
 
@@ -100,10 +100,10 @@ The **Facade Pattern** provides a simplified interface to a complex subsystem, m
 
 ### Test Files
 
-- [SubsystemATest.java](../../../test/structural/facade/SubsystemATest.java)
-- [SubsystemBTest.java](../../../test/structural/facade/SubsystemBTest.java)
-- [SubsystemCTest.java](../../../test/structural/facade/SubsystemCTest.java)
-- [FacadeTest.java](../../../test/structural/facade/FacadeTest.java)
+- [SubsystemATest.java](../../test/structural/facade/SubsystemATest.java)
+- [SubsystemBTest.java](../../test/structural/facade/SubsystemBTest.java)
+- [SubsystemCTest.java](../../test/structural/facade/SubsystemCTest.java)
+- [FacadeTest.java](../../test/structural/facade/FacadeTest.java)
 
 ---
 
@@ -119,8 +119,8 @@ The **Proxy Pattern** provides a surrogate or placeholder object that controls a
 
 ### Test Files
 
-- [RealSubjectTest.java](../../../test/structural/proxy/RealSubjectTest.java)
-- [ProxyTest.java](../../../test/structural/proxy/ProxyTest.java)
+- [RealSubjectTest.java](../../test/structural/proxy/RealSubjectTest.java)
+- [ProxyTest.java](../../test/structural/proxy/ProxyTest.java)
 
 ---
 
@@ -129,4 +129,3 @@ The **Proxy Pattern** provides a surrogate or placeholder object that controls a
 This repository demonstrates the use of **structural patterns** in Java with well-structured examples and test cases for each pattern. Follow the links above to explore each pattern in detail.
 
 Happy coding! 🚀
-
