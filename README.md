@@ -29,7 +29,7 @@ The project will be implemented step by step, with additional features like cont
 - [x] **Typescript**
   - Implement creational, structural, and behavioral patterns.
   - Include comments and clear explanations.
-- [ ] **Java**
+- [x] **Java**
   - Translate TypeScript implementations into Java.
   - Highlight Java's object-oriented features.
 - [ ] **Python**
