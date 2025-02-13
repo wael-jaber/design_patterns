@@ -35,10 +35,10 @@ The project will be implemented step by step, with additional features like cont
 
 ### Language Implementations
 
-- [x] **TypeScript**
+- [x] [**TypeScript**](./typescript/README.md)
   - Implement creational, structural, and behavioral patterns.
   - Include comments and clear explanations.
-- [x] **Java**
+- [x] [**Java**](./java/README.md)
   - Translate TypeScript implementations into Java.
   - Highlight Java's object-oriented features.
 - [ ] **Python**
@@ -100,23 +100,6 @@ Ensure you have the necessary tools installed for the language you wish to explo
 - **Rust**: Rustup or Cargo
 - **Go**: Go 1.18+
 - **Docker**: Docker Desktop or equivalent for your system
-
-### Running Examples
-
-Navigate to the folder for the desired language and execute the examples. For instance:
-
-#### TypeScript:
-
-```bash
-cd typescript
-node creational/singleton.js
-```
-
-#### Docker (Unified Environment):
-
-```bash
-docker-compose up
-```
 
 ## Purpose
 
