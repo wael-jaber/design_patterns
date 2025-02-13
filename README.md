@@ -1,12 +1,21 @@
 # Design Patterns Examples Repository
 
+![Build](https://github.com/wael-jaber/design_patterns/actions/workflows/ci.yml/badge.svg?branch=main)
+
 Welcome to the **Design Patterns Examples** repository! This repository serves as a personal project to document and showcase my understanding of design patterns through practical implementations in multiple programming languages. Each implementation is organized by language and categorized by the type of design pattern, offering a clear and structured reference.
+
+## 📊 Code Coverage
+
+| Language   | Coverage Badge                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Java       | [![Java Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=java)](https://codecov.io/gh/wael-jaber/design_patterns)             |
+| TypeScript | [![TypeScript Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=typescript)](https://codecov.io/gh/wael-jaber/design_patterns) |
 
 ## Repository Structure
 
 ```
 design-patterns/
-├── typescript/        # Design patterns implemented in Typescript
+├── typescript/        # Design patterns implemented in TypeScript
 ├── java/              # Design patterns implemented in Java
 ├── python/            # Design patterns implemented in Python
 ├── rust/              # Design patterns implemented in Rust
@@ -26,7 +35,7 @@ The project will be implemented step by step, with additional features like cont
 
 ### Language Implementations
 
-- [x] **Typescript**
+- [x] **TypeScript**
   - Implement creational, structural, and behavioral patterns.
   - Include comments and clear explanations.
 - [x] **Java**
