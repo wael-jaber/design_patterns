@@ -1,2 +1,5 @@
 # libs and external modules
 node_modules
+
+#test cov
+coverage
