@@ -8,7 +8,7 @@ lint:
 	mypy src tests
 
 test:
-	pytest --cov=src tests
+	pytest --cov=src --cov-report=xml tests
 
 clean:
 	rm -rf __pycache__ .mypy_cache .pytest_cache
