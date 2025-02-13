@@ -10,6 +10,7 @@ Welcome to the **Design Patterns Examples** repository! This repository serves a
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Java       | [![Java Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=java)](https://codecov.io/gh/wael-jaber/design_patterns)             |
 | TypeScript | [![TypeScript Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=typescript)](https://codecov.io/gh/wael-jaber/design_patterns) |
+| Python     | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=python)](https://codecov.io/gh/wael-jaber/design_patterns)         |
 
 ## Repository Structure
 
@@ -41,7 +42,7 @@ The project will be implemented step by step, with additional features like cont
 - [x] [**Java**](./java/README.md)
   - Translate TypeScript implementations into Java.
   - Highlight Java's object-oriented features.
-- [ ] **Python**
+- [ ] [**Python**](./python/README.md)
   - Implement patterns in Python.
   - Leverage the dynamic nature of the language.
 - [ ] **Rust**
