@@ -82,29 +82,6 @@ To run the tests, use the following commands:
 
 ---
 
-## Getting Started
-
-1. Clone this repository:
-
-   ```bash
-   git clone <repository-url>
-   cd typescript
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-3. Run tests to verify the setup:
-
-   ```bash
-   pnpm test
-   ```
-
----
-
 ## Configuration
 
 ### TypeScript
@@ -114,10 +91,6 @@ To run the tests, use the following commands:
 ### Vitest
 
 - `vitest.config.mts`: Configures the test runner for the project.
-
-### Makefile
-
-- Automates common tasks such as running tests or linting.
 
 ---
 
