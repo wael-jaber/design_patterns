@@ -1,4 +1,3 @@
-import pytest
 from src.creational.singleton import Singleton
 
 
