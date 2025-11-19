@@ -37,7 +37,7 @@ of related or dependent objects without specifying their concrete classes.
 ## **Builder**
 
 The **Builder** pattern separates the construction of a complex object from its
-representation, allowing the same construction process to create different 
+representation, allowing the same construction process to create different
 representations.
 
 ### Implementation Files

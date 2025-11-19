@@ -17,7 +17,7 @@ test:
 	@$(MAKE) typescript_test
 	@$(MAKE) java_test
 	# Uncomment the following lines when other tests are available
-	# @$(MAKE) python_test
+	@$(MAKE) python_test
 	# @$(MAKE) rust_test
 	# @$(MAKE) go_test
 	@echo "All tests completed."
