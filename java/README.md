@@ -27,37 +27,37 @@ java/
 
 ## Design Pattern Categories
 
-### Behavioral Patterns
+### [Behavioral Patterns](./src/main/behavioral/README.md)
 
 Behavioral patterns focus on how objects interact and communicate with each other.
 
-- [Observer](./src/main/behavioral/Observer.java)
-- [State](./src/main/behavioral/State.java)
-- [Strategy](./src/main/behavioral/Strategy.java)
-- [Mediator](./src/main/behavioral/Mediator.java)
-- [Command](./src/main/behavioral/Command.java)
-- [Chain of Responsibility](./src/main/behavioral/ChainOfResponsibility.java)
+- [Observer](./src/main/behavioral/observer)
+- [State](./src/main/behavioral/state)
+- [Strategy](./src/main/behavioral/strategy)
+- [Mediator](./src/main/behavioral/mediator)
+- [Command](./src/main/behavioral/command)
+- [Chain of Responsibility](./src/main/behavioral/chainofresponsibility)
 
-### Creational Patterns
+### [Creational Patterns](./src/main/creational/README.md)
 
 Creational patterns deal with the process of object creation, making a system independent of how its objects are created.
 
-- [Abstract Factory](./src/main/creational/AbstractFactory.java)
-- [Builder](./src/main/creational/Builder.java)
-- [Factory](./src/main/creational/Factory.java)
-- [Prototype](./src/main/creational/Prototype.java)
-- [Singleton](./src/main/creational/Singleton.java)
+- [Abstract Factory](./src/main/creational/abstractfactory)
+- [Builder](./src/main/creational/builder)
+- [Factory](./src/main/creational/factory/)
+- [Prototype](./src/main/creational/prototype)
+- [Singleton](./src/main/creational/singleton)
 
-### Structural Patterns
+### [Structural Patterns](./src/main/structural/README.md)
 
 Structural patterns focus on composing objects and classes into larger structures while keeping them flexible and efficient.
 
-- [Adapter](./src/main/structural/Adapter.java)
-- [Bridge](./src/main/structural/Bridge.java)
-- [Composite](./src/main/structural/Composite.java)
-- [Decorator](./src/main/structural/Decorator.java)
-- [Facade](./src/main/structural/Facade.java)
-- [Proxy](./src/main/structural/Proxy.java)
+- [Adapter](./src/main/structural/adapter)
+- [Bridge](./src/main/structural/bridge)
+- [Composite](./src/main/structural/composite)
+- [Decorator](./src/main/structural/decorator)
+- [Facade](./src/main/structural/facade)
+- [Proxy](./src/main/structural/proxy)
 
 ---
 
