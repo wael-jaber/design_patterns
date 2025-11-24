@@ -42,7 +42,7 @@ The project will be implemented step by step, with additional features like cont
 - [x] [**Java**](./java/README.md)
   - Translate TypeScript implementations into Java.
   - Highlight Java's object-oriented features.
-- [ ] [**Python**](./python/README.md)
+- [x] [**Python**](./python/README.md)
   - Implement patterns in Python.
   - Leverage the dynamic nature of the language.
 - [ ] **Rust**
