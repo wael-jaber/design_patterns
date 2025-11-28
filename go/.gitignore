@@ -1,0 +1,39 @@
+# -----------------------------------------
+# Go Project .gitignore
+# -----------------------------------------
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Build output
+bin/
+build/
+out/
+
+# Go coverage files
+coverage.out
+coverage.html
+
+# Go workspace
+/vendor/
+/pkg/
+/dist/
+/tmp/
+
+# Logs
+*.log
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific trash
+.DS_Store
+Thumbs.db

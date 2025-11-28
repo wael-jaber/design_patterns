@@ -89,3 +89,28 @@ jobs:
           files: python/coverage.xml
           flags: python
           name: python-coverage
+
+  go:
+    name: Go Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22'
+
+      - name: Run Go tests with coverage
+        run: |
+          cd go
+          go test ./... -coverprofile=coverage.out
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: wael-jaber/design_patterns
+          files: go/coverage.out
+          flags: go
+          name: go-coverage
