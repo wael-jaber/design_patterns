@@ -11,6 +11,7 @@ Welcome to the **Design Patterns Examples** repository! This repository serves a
 | Java       | [![Java Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=java)](https://codecov.io/gh/wael-jaber/design_patterns)             |
 | TypeScript | [![TypeScript Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=typescript)](https://codecov.io/gh/wael-jaber/design_patterns) |
 | Python     | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=python)](https://codecov.io/gh/wael-jaber/design_patterns)         |
+| Go         | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=go)](https://codecov.io/gh/wael-jaber/design_patterns)             |
 
 ## Repository Structure
 
@@ -48,7 +49,7 @@ The project will be implemented step by step, with additional features like cont
 - [ ] **Rust**
   - Implement patterns in Rust.
   - Focus on ownership, borrowing, and concurrency.
-- [ ] **Go**
+- [ ] [**Go**](./go/README.md)
   - Implement patterns in Go.
   - Highlight simplicity and concurrency features.
 
