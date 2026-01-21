@@ -49,7 +49,7 @@ The project will be implemented step by step, with additional features like cont
 - [ ] **Rust**
   - Implement patterns in Rust.
   - Focus on ownership, borrowing, and concurrency.
-- [ ] [**Go**](./go/README.md)
+- [x] [**Go**](./go/README.md)
   - Implement patterns in Go.
   - Highlight simplicity and concurrency features.
 
