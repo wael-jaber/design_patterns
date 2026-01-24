@@ -1,29 +1,36 @@
-# Python Design Patterns Project
+# Python Design Patterns
 
-This repository demonstrates the implementation of various design patterns in **Python**, organized into three main categories: **Behavioral**, **Creational**, and **Structural**.
-Each pattern includes its implementation and corresponding unit tests using **pytest**.
+This directory contains **idiomatic Python implementations** of classic software design patterns.
+The focus is on **readability**, **explicit behavior**, and **testability**, using Python’s dynamic
+features responsibly.
+
+Each pattern is implemented independently and validated with unit tests using **pytest**.
+
+---
 
 ## Project Structure
 
-The project is organized as follows:
-
 ```
 python/
-├── src/                        # Source code
-│   ├── behavioral/             # Behavioral design patterns
-│   ├── creational/             # Creational design patterns
-│   ├── structural/             # Structural design patterns
-│
-├── tests/                      # Unit tests
-│   ├── behavioral/             # Tests for behavioral patterns
-│   ├── creational/             # Tests for creational patterns
-│   ├── structural/             # Tests for structural patterns
-│
-├── .gitignore                  # Python-specific ignore rules
-├── pyproject.toml              # Optional project configuration (pytest, tooling)
-├── requirements.txt            # Python dependencies (if used)
-├── README.md                   # Root project README
+├── src/
+│   ├── behavioral/                 # Behavioral design patterns
+│   ├── creational/                 # Creational design patterns
+│   └── structural/                 # Structural design patterns
+├── tests/
+│   ├── behavioral/                 # Tests for behavioral patterns
+│   ├── creational/                 # Tests for creational patterns
+│   └── structural/                 # Tests for structural patterns
+├── pyproject.toml                  # Tooling configuration (pytest, black, mypy, etc.)
+├── requirements.txt                # Python dependencies
+├── Makefile                        # Test and tooling automation
+└── README.md                       # This file
 ```
+
+Each pattern directory contains:
+
+- One or more implementation modules
+- Corresponding test modules
+- Minimal, explicit dependencies
 
 ---
 
@@ -31,7 +38,7 @@ python/
 
 ### [Behavioral Patterns](./src/behavioral/README.md)
 
-Behavioral patterns focus on how objects interact and communicate with each other.
+Behavioral patterns focus on **object interaction and responsibility**.
 
 - [Observer](./src/behavioral/observer/)
 - [Strategy](./src/behavioral/strategy/)
@@ -40,19 +47,23 @@ Behavioral patterns focus on how objects interact and communicate with each othe
 - [Mediator](./src/behavioral/mediator/)
 - [Chain of Responsibility](./src/behavioral/chain_of_responsibility/)
 
+---
+
 ### [Creational Patterns](./src/creational/README.md)
 
-Creational patterns deal with the process of object creation, making a system independent of how its objects are created.
+Creational patterns address **object creation** while keeping usage flexible and explicit.
 
+- [Singleton](./src/creational/singleton/)
+- [Factory](./src/creational/factory/)
 - [Abstract Factory](./src/creational/abstract_factory/)
 - [Builder](./src/creational/builder/)
-- [Factory](./src/creational/factory/)
 - [Prototype](./src/creational/prototype/)
-- [Singleton](./src/creational/singleton/)
+
+---
 
 ### [Structural Patterns](./src/structural/README.md)
 
-Structural patterns focus on composing objects and classes into larger structures while keeping them flexible and efficient.
+Structural patterns focus on **composing objects** into larger structures.
 
 - [Adapter](./src/structural/adapter/)
 - [Bridge](./src/structural/bridge/)
@@ -63,18 +74,39 @@ Structural patterns focus on composing objects and classes into larger structure
 
 ---
 
-## Testing
+## Environment Setup
 
-This project uses **pytest** for testing.
-Each pattern has a dedicated test file located in the `tests` folder under its respective category.
+Python requires an explicit virtual environment.
 
-### Running Tests
+Create and activate a virtual environment:
 
 ```bash
-pytest
+python -m venv venv
+source venv/bin/activate      # Linux / macOS
+venv\Scripts\activate       # Windows
 ```
 
-Or, for more detailed output:
+Install dependencies:
+
+```bash
+make install
+```
+
+> All Makefile commands assume an active virtual environment.
+
+---
+
+## Testing
+
+All implementations are validated using **pytest**.
+
+Run tests:
+
+```bash
+make test
+```
+
+Verbose output:
 
 ```bash
 pytest -vv
@@ -82,32 +114,41 @@ pytest -vv
 
 ---
 
-## Configuration
+## Coverage
 
-### Python Environment
-
-- `requirements.txt`: Contains Python dependencies (if required)
-- `pyproject.toml`: Optional configuration for tools such as pytest, black, isort, etc.
-
-Create a virtual environment and install dependencies:
+Generate a coverage report:
 
 ```bash
-python -m venv venv
-source venv/bin/activate   # Linux / macOS
-venv\Scriptsctivate      # Windows
+pytest --cov=src --cov-report=xml
+```
 
-pip install -r requirements.txt
+The coverage report will be generated as `coverage.xml`.
+
+---
+
+## Makefile Usage
+
+A `Makefile` is provided to standardize common tasks:
+
+```bash
+make install   # Install dependencies
+make format    # Format code (black)
+make lint      # Static type checking (mypy)
+make test      # Run tests with coverage
+make clean     # Remove caches and artifacts
 ```
 
 ---
 
-## Contributing
+## Design Principles
 
-Contributions are welcome!
-Feel free to open an issue or submit a pull request.
+- Pythonic and readable code
+- Explicit is better than implicit
+- Favor composition and clear data flow
+- Minimal abstractions
+- Tests as first-class citizens
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
+This directory is intended as a **reference and learning resource** for applying classic
+design patterns in Python while respecting Python’s design philosophy.

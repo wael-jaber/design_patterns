@@ -36,7 +36,6 @@ The **Abstract Factory** pattern provides an interface for creating families of 
 ### Pitfalls
 
 1. **Overcomplicated Factory Selection**:
-
    - Mistake: Hardcoding factory selection logic.
    - Fix: Use enums like `FactoryType` to simplify and type-safe factory creation.
 
@@ -70,7 +69,6 @@ The **Builder** pattern separates the construction of a complex object from its 
 ### Pitfalls
 
 1. **Mutable Products After Build**:
-
    - Mistake: Allowing changes to the product after construction.
    - Fix: Use `final` fields and ensure immutability.
 
@@ -101,7 +99,6 @@ The **Prototype** pattern creates new objects by copying an existing object, kno
 ### Pitfalls
 
 1. **Shallow Copy vs. Deep Copy**:
-
    - Mistake: Cloning objects with nested references creates shallow copies.
    - Fix: Use a copy constructor or deep clone logic for complex objects.
 
@@ -131,12 +128,10 @@ The **Singleton** pattern ensures a class has only one instance and provides a g
 ### Pitfalls
 
 1. **Thread Safety Issues**:
-
    - Mistake: Using lazy initialization without synchronization in a multi-threaded environment.
    - Fix: Use synchronized methods or double-checked locking for thread safety.
 
 2. **Serialization Issues**:
-
    - Mistake: Losing singleton behavior during serialization.
    - Fix: Implement `readResolve` to ensure only one instance.
 
@@ -177,7 +172,6 @@ The **Factory** pattern provides a method to create objects without specifying t
 ### Pitfalls
 
 1. **Overuse of Factories**:
-
    - Mistake: Using factories unnecessarily for simple object creation.
    - Fix: Reserve factories for complex or polymorphic object creation.
 
@@ -195,5 +189,3 @@ The **Factory** pattern provides a method to create objects without specifying t
 ## **Conclusion**
 
 This repository demonstrates the use of creational patterns in Java with clear examples, test cases, pitfalls, and tips for each pattern. Follow the links above to explore the source code and learn best practices.
-
-Happy coding! 🚀

@@ -1,8 +1,11 @@
-# Go Design Patterns Project
+# Go Design Patterns
 
-This repository demonstrates the implementation of various design patterns in **Go**, organized into three main categories: **Behavioral**, **Creational**, and **Structural**. Each pattern includes its implementation and corresponding unit tests using Go’s built-in **testing** framework.
+This directory contains **idiomatic Go implementations** of classic software design patterns.
+The focus is on **composition over inheritance**, **clear interfaces**, **testability**, and
+alignment with Go’s standard library and conventions.
 
-The goal of this project is to provide **idiomatic Go implementations** of classic design patterns, emphasizing interfaces, composition, simplicity, and testability.
+Each pattern is implemented in isolation and accompanied by unit tests using Go’s built-in
+`testing` package.
 
 ---
 
@@ -17,26 +20,31 @@ go/
 │   │   ├── strategy/
 │   │   ├── mediator/
 │   │   ├── command/
-│   │   ├── chainofresponsibility/
+│   │   └── chainofresponsibility/
 │   ├── creational/                 # Creational design patterns
 │   │   ├── singleton/
 │   │   ├── factory/
 │   │   ├── abstractfactory/
 │   │   ├── builder/
-│   │   ├── prototype/
+│   │   └── prototype/
 │   ├── structural/                 # Structural design patterns
 │   │   ├── adapter/
 │   │   ├── bridge/
 │   │   ├── composite/
 │   │   ├── decorator/
 │   │   ├── facade/
-│   │   ├── proxy/
-├── go.mod                      # Go module definition
-├── go.sum                      # Dependency checksums
-├── Makefile                    # Test and coverage automation
-├── .gitignore                  # Ignored files and directories for Git
-├── README.md                   # Root project README
+│   │   └── proxy/
+├── go.mod                          # Go module definition
+├── go.sum                          # Dependency checksums
+├── Makefile                        # Test and coverage automation
+└── README.md                       # This file
 ```
+
+Each pattern directory contains:
+
+- One or more implementation files
+- Corresponding `_test.go` files
+- No external dependencies unless strictly necessary
 
 ---
 
@@ -44,7 +52,7 @@ go/
 
 ### [Behavioral Patterns](./src/behavioral/README.md)
 
-Behavioral patterns focus on how objects interact and communicate with each other.
+Behavioral patterns focus on **communication and responsibility** between components.
 
 - [Observer](./src/behavioral/observer)
 - [State](./src/behavioral/state)
@@ -57,19 +65,19 @@ Behavioral patterns focus on how objects interact and communicate with each othe
 
 ### [Creational Patterns](./src/creational/README.md)
 
-Creational patterns deal with object creation mechanisms, providing flexibility and reuse.
+Creational patterns address **object creation** while keeping code flexible and explicit.
 
+- [Singleton](./src/creational/singleton)
+- [Factory](./src/creational/factory)
 - [Abstract Factory](./src/creational/abstractfactory)
 - [Builder](./src/creational/builder)
-- [Factory](./src/creational/factory)
 - [Prototype](./src/creational/prototype)
-- [Singleton](./src/creational/singleton)
 
 ---
 
 ### [Structural Patterns](./src/structural/README.md)
 
-Structural patterns focus on composing objects into larger structures while keeping them flexible and efficient.
+Structural patterns focus on **object composition** and structuring relationships.
 
 - [Adapter](./src/structural/adapter)
 - [Bridge](./src/structural/bridge)
@@ -82,27 +90,36 @@ Structural patterns focus on composing objects into larger structures while keep
 
 ## Testing
 
-This project uses Go’s built-in **testing** package.
+All implementations use Go’s standard `testing` package.
 
-- Tests are colocated with implementation files
-- Each implementation file has a corresponding `_test.go` file
-- Black-box testing (`package xxx_test`) is used
-- Full coverage is supported via `go test`
+Testing principles:
 
-### Running Tests
+- Tests are colocated with implementations
+- Black-box testing is preferred (`package xxx_test`)
+- No external test frameworks
+- Deterministic and fast test execution
+
+### Run Tests
 
 ```bash
 go test ./...
 ```
 
-### Running Tests with Coverage
+### Test Coverage
+
+Generate coverage data:
 
 ```bash
 go test ./... -coverprofile=coverage.out
+```
+
+View coverage summary:
+
+```bash
 go tool cover -func=coverage.out
 ```
 
-To generate an HTML coverage report:
+Generate an HTML coverage report:
 
 ```bash
 go tool cover -html=coverage.out
@@ -110,36 +127,29 @@ go tool cover -html=coverage.out
 
 ---
 
-## Configuration
+## Makefile Usage
 
-### Go Modules
+A `Makefile` is provided to standardize common tasks:
 
-- `go.mod`: Defines the module path and Go version
-- `go.sum`: Tracks dependency checksums
-
-### Makefile
-
-A `Makefile` is provided to simplify running tests and generating coverage reports.
-
----
-
-## Design Principles Followed
-
-- Idiomatic Go (interfaces, composition, minimal abstractions)
-- No inheritance or forced OOP hierarchies
-- Interfaces exist primarily for client typing
-- Thread-safety where relevant (Observer, Mediator)
-- Clear separation of concerns
-- One responsibility per file
+```bash
+make install   # Tidy module dependencies
+make test      # Run tests with coverage
+make coverage  # Generate coverage reports
+make clean     # Remove coverage artifacts
+```
 
 ---
 
-## Contributing
+## Design Principles
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+- Idiomatic Go (interfaces, composition, explicit dependencies)
+- No inheritance or class hierarchies
+- Interfaces used only where they add clarity
+- Prefer small packages and focused responsibilities
+- Thread-safety where relevant (e.g. Observer, Mediator)
+- Minimal abstractions, maximal readability
 
 ---
 
-## License
-
-This project is licensed under the **MIT License**.
+This directory is intended as a **reference and learning resource** for applying design patterns
+in Go while respecting the language’s philosophy.

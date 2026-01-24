@@ -130,6 +130,3 @@ The **Chain of Responsibility** pattern lets multiple objects handle a request w
 ## **Conclusion**
 
 This repository demonstrates the use of behavioral patterns in Java with clear examples and test cases for each pattern. Follow the links above to view the source code and test files for detailed insights into each pattern.
-
-Happy coding! 🚀
-

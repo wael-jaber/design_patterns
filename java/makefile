@@ -1,20 +1,21 @@
-# Java Makefile
+# -------------------------
+# Java Design Patterns
+# -------------------------
 
-.PHONY: build test coverage clean
+.PHONY: install build test coverage clean
 
-# Build the project
+install:
+	mvn dependency:resolve
+
 build:
 	mvn clean compile
 
-# Run all tests
 test:
 	mvn test
 
-# Generate code coverage report
 coverage:
 	mvn clean test jacoco:report
-	open target/site/jacoco/index.html  # Automatically open the report
+	@echo "Coverage report generated at target/site/jacoco/index.html"
 
-# Clean compiled files
 clean:
 	mvn clean

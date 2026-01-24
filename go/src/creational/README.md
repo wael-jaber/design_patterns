@@ -117,5 +117,3 @@ This directory demonstrates idiomatic Go implementations of creational design pa
 - Clear separation of responsibilities
 - Comprehensive unit testing
 - Practical, real-world examples
-
-Happy coding! 🚀

@@ -1,27 +1,36 @@
-# Java Design Patterns Project
+# Java Design Patterns
 
-This repository demonstrates the implementation of various design patterns in **Java**, organized into three main categories: **Behavioral**, **Creational**, and **Structural**. Each pattern includes its implementation and corresponding unit tests using **JUnit**.
+This directory contains **idiomatic Java implementations** of classic software design patterns.
+The focus is on **clear object-oriented design**, **testability**, and **explicit structure**
+using standard Java tooling.
+
+Each pattern is implemented independently and validated with unit tests using **JUnit**.
+
+---
 
 ## Project Structure
 
-The project is organized as follows:
-
 ```
 java/
-├── src/                    # Source code
-│   ├── main/               # Main application code
-│   │   ├── behavioral/     # Behavioral design patterns
-│   │   ├── creational/     # Creational design patterns
-│   │   ├── structural/     # Structural design patterns
-│   ├── test/               # Unit tests
-│       ├── behavioral/     # Tests for behavioral patterns
-│       ├── creational/     # Tests for creational patterns
-│       ├── structural/     # Tests for structural patterns
-├── .gitignore              # Ignored files and directories for Git
-├── pom.xml                 # Maven configuration (for dependencies and build)
-├── build.gradle            # Gradle configuration (if using Gradle)
-├── README.md               # Root project README
+├── src/
+│   ├── main/
+│   │   ├── behavioral/              # Behavioral design patterns
+│   │   ├── creational/              # Creational design patterns
+│   │   └── structural/              # Structural design patterns
+│   ├── test/
+│   │   ├── behavioral/              # Tests for behavioral patterns
+│   │   ├── creational/              # Tests for creational patterns
+│   │   └── structural/              # Tests for structural patterns
+├── pom.xml                          # Maven configuration
+├── Makefile                         # Test and coverage automation
+└── README.md                        # This file
 ```
+
+Each pattern package contains:
+
+- One or more implementation classes
+- Corresponding JUnit test classes
+- No framework-specific dependencies beyond what is necessary
 
 ---
 
@@ -29,7 +38,7 @@ java/
 
 ### [Behavioral Patterns](./src/main/behavioral/README.md)
 
-Behavioral patterns focus on how objects interact and communicate with each other.
+Behavioral patterns focus on **interaction and responsibility** between objects.
 
 - [Observer](./src/main/behavioral/observer)
 - [State](./src/main/behavioral/state)
@@ -38,19 +47,23 @@ Behavioral patterns focus on how objects interact and communicate with each othe
 - [Command](./src/main/behavioral/command)
 - [Chain of Responsibility](./src/main/behavioral/chainofresponsibility)
 
+---
+
 ### [Creational Patterns](./src/main/creational/README.md)
 
-Creational patterns deal with the process of object creation, making a system independent of how its objects are created.
+Creational patterns address **object creation concerns** while keeping clients decoupled from concrete implementations.
 
+- [Singleton](./src/main/creational/singleton)
+- [Factory](./src/main/creational/factory)
 - [Abstract Factory](./src/main/creational/abstractfactory)
 - [Builder](./src/main/creational/builder)
-- [Factory](./src/main/creational/factory/)
 - [Prototype](./src/main/creational/prototype)
-- [Singleton](./src/main/creational/singleton)
+
+---
 
 ### [Structural Patterns](./src/main/structural/README.md)
 
-Structural patterns focus on composing objects and classes into larger structures while keeping them flexible and efficient.
+Structural patterns focus on **composing objects and classes** into larger structures.
 
 - [Adapter](./src/main/structural/adapter)
 - [Bridge](./src/main/structural/bridge)
@@ -63,13 +76,15 @@ Structural patterns focus on composing objects and classes into larger structure
 
 ## Testing
 
-This project uses **JUnit** for testing. Each pattern has a dedicated test file located in the `test` folder under its respective category.
+All implementations are validated using **JUnit**.
 
-### Running Tests
+Testing principles:
 
-#### Using Maven
+- Tests mirror the production package structure
+- Focus on observable behavior
+- Fast and deterministic execution
 
-To run the tests using **Maven**, execute the following command:
+### Run Tests (Maven)
 
 ```bash
 mvn test
@@ -77,20 +92,45 @@ mvn test
 
 ---
 
-## Configuration
+## Coverage
 
-### Maven
+Generate a coverage report using JaCoCo:
 
-- `pom.xml`: Configures dependencies and the build system.
+```bash
+mvn test jacoco:report
+```
+
+The HTML report will be available under:
+
+```
+target/site/jacoco/index.html
+```
 
 ---
 
-## Contributing
+## Makefile Usage
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+A `Makefile` is provided to standardize common tasks:
+
+```bash
+make install    # Resolve dependencies
+make build      # Compile sources
+make test       # Run tests
+make coverage   # Generate coverage report
+make clean      # Clean build artifacts
+```
 
 ---
 
-## License
+## Design Principles
 
-This project is licensed under the MIT License.
+- Clear separation of concerns
+- Favor composition over inheritance where appropriate
+- Explicit object lifecycles
+- Avoid overengineering and unnecessary abstractions
+- Tests as first-class citizens
+
+---
+
+This directory is intended as a **reference and learning resource** for applying classic
+design patterns in Java using modern tooling and clean structure.

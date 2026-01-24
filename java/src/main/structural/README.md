@@ -127,5 +127,3 @@ The **Proxy Pattern** provides a surrogate or placeholder object that controls a
 ## **Conclusion**
 
 This repository demonstrates the use of **structural patterns** in Java with well-structured examples and test cases for each pattern. Follow the links above to explore each pattern in detail.
-
-Happy coding! 🚀

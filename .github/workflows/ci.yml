@@ -7,25 +7,27 @@ jobs:
     name: Java Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: Build and test with Maven
-        run: |
-          cd java
-          mvn clean test
-      - name: Generate JaCoCo coverage report
-        run: |
-          cd java
-          mvn jacoco:report
-      - name: Upload coverage reports to Codecov
+          distribution: temurin
+          java-version: 17
+
+      - name: Install dependencies
+        run: make -C java install
+
+      - name: Run tests
+        run: make -C java test
+
+      - name: Generate coverage
+        run: make -C java coverage
+
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: wael-jaber/design_patterns
           files: java/target/site/jacoco/jacoco.xml
           flags: java
           name: java-coverage
@@ -34,28 +36,26 @@ jobs:
     name: TypeScript Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Install pnpm
         run: npm install -g pnpm
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Verify pnpm installation
-        run: pnpm --version
+
       - name: Install dependencies
-        run: |
-          cd typescript
-          pnpm install --frozen-lockfile
+        run: make -C typescript install
+
       - name: Run tests with coverage
-        run: |
-          cd typescript
-          pnpm coverage
-      - name: Upload coverage reports to Codecov
+        run: make -C typescript coverage
+
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: wael-jaber/design_patterns
           files: typescript/coverage/lcov.info
           flags: typescript
           name: typescript-coverage
@@ -64,28 +64,34 @@ jobs:
     name: Python Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-      - name: Install dependencies
+
+      - name: Create virtual environment
         run: |
-          cd python
           python -m venv venv
           source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run tests with coverage
+          python --version
+          pip --version
+
+      - name: Install dependencies
         run: |
-          cd python
           source venv/bin/activate
-          pytest --cov=src --cov-report=xml tests
-      - name: Upload coverage reports to Codecov
+          make -C python install
+
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          make -C python test
+
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: wael-jaber/design_patterns
           files: python/coverage.xml
           flags: python
           name: python-coverage
@@ -94,23 +100,23 @@ jobs:
     name: Go Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version: '1.22'
 
-      - name: Run Go tests with coverage
-        run: |
-          cd go
-          go test ./... -coverprofile=coverage.out
+      - name: Install dependencies
+        run: make -C go install
+
+      - name: Run tests
+        run: make -C go test
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: wael-jaber/design_patterns
           files: go/coverage.out
           flags: go
           name: go-coverage

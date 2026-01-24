@@ -27,7 +27,6 @@ The **Chain of Responsibility** pattern allows multiple handlers to process a re
 #### Pitfalls:
 
 1. **Skipping the Next Handler**:
-
    - Ensure each handler calls `super.handle(request)` if it does not process the request.
 
 2. **Overcomplicating the Chain**:
@@ -55,7 +54,6 @@ The **Command** pattern encapsulates a request as an object, allowing parameteri
 #### Pitfalls:
 
 1. **Forgetting Undo Mechanism**:
-
    - A command pattern should generally provide an undo function to reverse actions.
 
 2. **Overcomplicating Simple Operations**:
@@ -82,7 +80,6 @@ The **Mediator** pattern centralizes communication between objects to reduce dir
 #### Pitfalls:
 
 1. **Bypassing the Mediator**:
-
    - Direct communication between objects defeats the purpose of the pattern.
 
 2. **Overcomplicating the Mediator**:
@@ -109,7 +106,6 @@ The **Observer** pattern defines a dependency where multiple objects listen for 
 #### Pitfalls:
 
 1. **Memory Leaks**:
-
    - Forgetting to detach observers can cause memory issues in dynamic systems.
 
 2. **Overloading Notify Loops**:
@@ -136,7 +132,6 @@ The **State** pattern allows an object to alter its behavior when its internal s
 #### Pitfalls:
 
 1. **Forgetting to Update the State**:
-
    - Ensure `setState` is used when transitioning between states.
 
 2. **Overcomplicating State Transitions**:
@@ -163,7 +158,6 @@ The **Strategy** pattern defines a family of algorithms, encapsulates each one, 
 #### Pitfalls:
 
 1. **Hardcoding Strategies**:
-
    - Avoid embedding strategy-specific logic directly in the context class.
 
 2. **Unused Strategies**:
@@ -179,18 +173,13 @@ The **Strategy** pattern defines a family of algorithms, encapsulates each one, 
 ## Conclusion: Tips for Using Behavioral Patterns in JavaScript/TypeScript
 
 1. **Leverage TypeScript**:
-
    - Use interfaces and types to define clear contracts between components.
 
 2. **Avoid Overengineering**:
-
    - Use behavioral patterns when they provide a clear benefit, avoiding unnecessary complexity.
 
 3. **Focus on Maintainability**:
-
    - Keep implementations modular and testable for long-term sustainability.
 
 4. **Test Extensively**:
    - Ensure pattern implementations handle different scenarios and interactions properly.
-
-Explore the examples in this repository to see these patterns in action. Happy coding!

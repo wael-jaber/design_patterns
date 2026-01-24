@@ -1,34 +1,42 @@
-# TypeScript Design Patterns Project
+# TypeScript Design Patterns
 
-This repository demonstrates the implementation of various design patterns in **TypeScript**, organized into three main categories: **Behavioral**, **Creational**, and **Structural**. Each pattern includes both its implementation and corresponding tests using **Vitest**.
+This directory contains **idiomatic TypeScript implementations** of classic software design patterns.
+The focus is on **strong typing**, **clear contracts**, and **testability**, while staying close to
+TypeScript and JavaScript ecosystem conventions.
+
+Each pattern is implemented independently and validated with unit tests using **Vitest**.
+
+---
 
 ## Project Structure
 
-The project is organized as follows:
-
 ```
 typescript/
-├── node_modules/       # Dependencies
-├── src/                # Source code
-│   ├── behavioral/     # Behavioral design patterns
-│   ├── creational/     # Creational design patterns
-│   ├── structural/     # Structural design patterns
-├── .gitignore          # Ignored files and directories for Git
-├── package.json        # Project metadata and scripts
-├── pnpm-lock.yaml      # Dependency lockfile for pnpm
-├── tsconfig.json       # TypeScript configuration
-├── vitest.config.mts   # Vitest configuration
-├── makefile            # Automate tasks
-├── README.md           # Root project README
+├── src/
+│   ├── behavioral/                 # Behavioral design patterns
+│   ├── creational/                 # Creational design patterns
+│   └── structural/                 # Structural design patterns
+├── package.json                    # Project metadata and scripts
+├── pnpm-lock.yaml                  # Dependency lockfile
+├── tsconfig.json                   # TypeScript configuration
+├── vitest.config.mts               # Vitest configuration
+├── Makefile                        # Test and tooling automation
+└── README.md                       # This file
 ```
+
+Each pattern directory contains:
+
+- One or more implementation files
+- Corresponding test files
+- No framework-specific dependencies beyond what is required
 
 ---
 
 ## Design Pattern Categories
 
-### Behavioral Patterns
+### [Behavioral Patterns](./src/behavioral/README.md)
 
-Behavioral patterns focus on how objects interact and communicate with each other.
+Behavioral patterns focus on **interaction and responsibility** between components.
 
 - [Observer](./src/behavioral/observer.ts)
 - [State](./src/behavioral/state.ts)
@@ -37,19 +45,23 @@ Behavioral patterns focus on how objects interact and communicate with each othe
 - [Command](./src/behavioral/command.ts)
 - [Chain of Responsibility](./src/behavioral/chain_of_responsibility.ts)
 
-### Creational Patterns
+---
 
-Creational patterns deal with the process of object creation, making a system independent of how its objects are created.
+### [Creational Patterns](./src/creational/README.md)
 
+Creational patterns address **object creation** while keeping clients decoupled from concrete implementations.
+
+- [Singleton](./src/creational/singleton.ts)
+- [Factory](./src/creational/factory.ts)
 - [Abstract Factory](./src/creational/abstract_factory.ts)
 - [Builder](./src/creational/builder.ts)
-- [Factory](./src/creational/factory.ts)
 - [Prototype](./src/creational/prototype.ts)
-- [Singleton](./src/creational/singleton.ts)
 
-### Structural Patterns
+---
 
-Structural patterns focus on composing objects and classes into larger structures while keeping them flexible and efficient.
+### [Structural Patterns](./src/structural/README.md)
+
+Structural patterns focus on **composing objects and abstractions** into larger structures.
 
 - [Adapter](./src/structural/adapter.ts)
 - [Bridge](./src/structural/bridge.ts)
@@ -62,48 +74,57 @@ Structural patterns focus on composing objects and classes into larger structure
 
 ## Testing
 
-This project uses **Vitest** for testing. Each pattern has a dedicated test file located in the `__tests__` folder under its respective category.
+All implementations are validated using **Vitest**.
 
-### Running Tests
+Run tests:
 
-To run the tests, use the following commands:
-
-1. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-2. Run all tests:
-
-   ```bash
-   pnpm test
-   ```
+```bash
+pnpm test
+```
 
 ---
 
-## Configuration
+## Coverage
 
-### TypeScript
+Generate a coverage report:
 
-- `tsconfig.json`: Configures TypeScript options for the project.
+```bash
+pnpm test --coverage
+```
 
-### Vitest
-
-- `vitest.config.mts`: Configures the test runner for the project.
-
----
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+Coverage output will be generated according to `vitest.config.mts`.
 
 ---
 
-## License
+## Makefile Usage
 
-This project is licensed under the MIT License.
+A `Makefile` is provided to standardize common tasks:
+
+```bash
+make install   # Install dependencies
+make test      # Run tests
+make clean     # Remove build artifacts
+```
 
 ---
 
-Let me know if you'd like additional changes or enhancements! 🚀
+## Tooling
+
+- **TypeScript** for static typing and compile-time safety
+- **pnpm** for fast, deterministic dependency management
+- **Vitest** for fast unit testing with modern tooling
+
+---
+
+## Design Principles
+
+- Strong typing and explicit contracts
+- Prefer composition over inheritance
+- Avoid unnecessary abstractions
+- Tests as first-class citizens
+- Idiomatic TypeScript over framework patterns
+
+---
+
+This directory is intended as a **reference and learning resource** for applying classic
+design patterns in TypeScript with modern tooling and clean structure.

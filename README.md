@@ -2,70 +2,57 @@
 
 ![Build](https://github.com/wael-jaber/design_patterns/actions/workflows/ci.yml/badge.svg?branch=main)
 
-Welcome to the **Design Patterns Examples** repository! This repository serves as a personal project to document and showcase my understanding of design patterns through practical implementations in multiple programming languages. Each implementation is organized by language and categorized by the type of design pattern, offering a clear and structured reference.
+Welcome to the **Design Patterns Examples** repository.
+
+This project documents and demonstrates classic **software design patterns** through **practical, idiomatic implementations** in multiple programming languages.  
+Each language implementation is self-contained and follows the conventions and tooling of its ecosystem.
+
+The goal is clarity, correctness, and comparability — not framework abstraction or tooling experiments.
+
+---
 
 ## 📊 Code Coverage
 
-| Language   | Coverage Badge                                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Java       | [![Java Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=java)](https://codecov.io/gh/wael-jaber/design_patterns)             |
+| Language   | Coverage |
+| ---------- | -------- |
+| Java       | [![Java Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=java)](https://codecov.io/gh/wael-jaber/design_patterns) |
 | TypeScript | [![TypeScript Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=typescript)](https://codecov.io/gh/wael-jaber/design_patterns) |
-| Python     | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=python)](https://codecov.io/gh/wael-jaber/design_patterns)         |
-| Go         | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=go)](https://codecov.io/gh/wael-jaber/design_patterns)             |
+| Python     | [![Python Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=python)](https://codecov.io/gh/wael-jaber/design_patterns) |
+| Go         | [![Go Coverage](https://codecov.io/gh/wael-jaber/design_patterns/branch/main/graph/badge.svg?flag=go)](https://codecov.io/gh/wael-jaber/design_patterns) |
+
+---
+
+## Language Implementations
+
+Each language has its **own README** with setup instructions, structure, and examples:
+
+- **TypeScript** → [`typescript/README.md`](./typescript/README.md)
+- **Java** → [`java/README.md`](./java/README.md)
+- **Python** → [`python/README.md`](./python/README.md)
+- **Go** → [`go/README.md`](./go/README.md)
+
+---
 
 ## Repository Structure
 
 ```
 design-patterns/
-├── typescript/        # Design patterns implemented in TypeScript
-├── java/              # Design patterns implemented in Java
-├── python/            # Design patterns implemented in Python
-├── rust/              # Design patterns implemented in Rust
-├── go/                # Design patterns implemented in Go
-└── README.md          # Root README file
+├── typescript/        # TypeScript implementations
+├── java/              # Java implementations
+├── python/            # Python implementations
+├── go/                # Go implementations
+├── Makefile           # Root orchestration Makefile
+└── README.md
 ```
 
-Each language folder contains examples categorized into the following types:
+The root Makefile only orchestrates common tasks.  
+All language-specific logic lives inside each directory.
 
-1. **Creational Patterns**: Focused on object creation mechanisms.
-2. **Structural Patterns**: Deal with object composition and relationships.
-3. **Behavioral Patterns**: Concerned with object interaction and responsibilities.
-
-## Roadmap
-
-The project will be implemented step by step, with additional features like containerization and testing examples added along the way.
-
-### Language Implementations
-
-- [x] [**TypeScript**](./typescript/README.md)
-  - Implement creational, structural, and behavioral patterns.
-  - Include comments and clear explanations.
-- [x] [**Java**](./java/README.md)
-  - Translate TypeScript implementations into Java.
-  - Highlight Java's object-oriented features.
-- [x] [**Python**](./python/README.md)
-  - Implement patterns in Python.
-  - Leverage the dynamic nature of the language.
-- [ ] **Rust**
-  - Implement patterns in Rust.
-  - Focus on ownership, borrowing, and concurrency.
-- [x] [**Go**](./go/README.md)
-  - Implement patterns in Go.
-  - Highlight simplicity and concurrency features.
-
-### Additional Features
-
-- [ ] **Testing Examples**
-  - Provide test cases for each design pattern in all languages.
-  - Use language-appropriate testing frameworks.
-- [ ] **Dockerization**
-  - Dockerize the project to provide a unified environment for running the examples.
-  - Include a `Dockerfile` and `docker-compose.yml` to facilitate usage.
+---
 
 ## Supported Design Patterns
 
 ### Creational Patterns
-
 - Singleton
 - Factory Method
 - Abstract Factory
@@ -73,7 +60,6 @@ The project will be implemented step by step, with additional features like cont
 - Prototype
 
 ### Structural Patterns
-
 - Adapter
 - Composite
 - Proxy
@@ -82,7 +68,6 @@ The project will be implemented step by step, with additional features like cont
 - Bridge
 
 ### Behavioral Patterns
-
 - Observer
 - Strategy
 - Command
@@ -90,29 +75,50 @@ The project will be implemented step by step, with additional features like cont
 - Mediator
 - Chain of Responsibility
 
+---
+
 ## How to Use
 
 ### Prerequisites
 
-Ensure you have the necessary tools installed for the language you wish to explore:
+Install the tooling for the language you want to explore:
 
-- **TypeScript**: [Node.js](https://nodejs.org/)
-- **Java**: JDK 8+ and a Java build tool like Maven or Gradle
-- **Python**: Python 3.8+
-- **Rust**: Rustup or Cargo
-- **Go**: Go 1.18+
-- **Docker**: Docker Desktop or equivalent for your system
+- **TypeScript**: Node.js + pnpm
+- **Java**: JDK 17+ and Maven
+- **Python**: Python 3.9+
+- **Go**: Go 1.22+
 
-## Purpose
-
-This repository is intended to:
-
-- **Document Knowledge**: Provide a structured and practical way to record and showcase my understanding of design patterns.
-- **Offer a Reference**: Serve as a resource for revisiting and reinforcing the principles of software architecture.
-- **Highlight Cross-Language Implementation**: Demonstrate the application of design patterns in multiple programming languages.
-- **Ensure Portability**: Dockerize the project to enable seamless execution across environments.
-- **Improve Reliability**: Include testing examples to validate implementations.
+Each language directory can be used independently by following its README.
 
 ---
 
-Thank you for exploring this repository! Feel free to use it as a learning resource or reference for implementing design patterns. 🎉
+### Common Commands (Root)
+
+```bash
+make install   # Install dependencies for all languages
+make test      # Run all tests
+make clean     # Clean build artifacts
+```
+
+---
+
+## Roadmap
+
+- [ ] **Rust**
+  - Implement design patterns in Rust
+  - Focus on ownership, borrowing, and concurrency trade-offs
+
+---
+
+## Purpose
+
+This repository exists to:
+
+- Document design pattern knowledge in a concrete, runnable form
+- Compare implementations across languages
+- Serve as a long-term reference
+- Favor correctness and clarity over abstraction
+
+---
+
+Feel free to explore, fork, or use this repository as a learning reference.

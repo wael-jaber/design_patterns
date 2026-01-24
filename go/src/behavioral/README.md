@@ -152,5 +152,3 @@ This directory demonstrates idiomatic Go implementations of behavioral design pa
 - Thread-safety where applicable
 - Clear separation of responsibilities
 - Comprehensive unit tests
-
-Happy coding! 🚀
